@@ -21,23 +21,28 @@ public class Carta {
 
 	// Contructores
 
-	public Carta(int num, int palo) {
+	public Carta(int num, int palo) { //Para la carta con numero y palo definido
 		super();
 		this.num = num;
 		this.palo = palo;
 	}
 
-	public Carta(int id) {
+	public Carta(int id) { //Para carta con la id
 		if (id % 10 != 0) {
 			this.num = (id % 10);
 			this.palo = (id / 10);	
 		} else { // Si el numero es 10 para que muestre el rey
 			this.num = (id % 10) + 10;
-			this.palo = (id / 10) - 1;
+			this.palo = (id / 10) - 1; 
 		}
 	}
 
 	// Metodos
+	
+	/**
+	 * Te dice el numero que tiene la carta
+	 * @return Numero de la carta
+	 */
 
 	public String getNombreNumero() {
 		String nombreNum = null;
@@ -64,6 +69,11 @@ public class Carta {
 		}
 		return nombreNum;
 	}
+	
+	/**
+	 * Te dice que palo es la carta
+	 * @return Palo de la carta
+	 */
 
 	public String getNombrePalo() {
 		String nombrePalo = null;
@@ -78,10 +88,20 @@ public class Carta {
 		}
 		return nombrePalo;
 	}
+	
+	/**
+	 * Te muestra el nombre de la carta, mostrando el numero y el palo que es
+	 * @return Nombre de la carta
+	 */
 
 	public String getNombreCarta() {
 		return getNombreNumero() + " de " + getNombrePalo();
 	}
+	
+	/**
+	 * Te dice el valor que tiene el numero de la carta en el juego del Tute
+	 * @return Valor de la carta
+	 */
 
 	public int getValorTute() {
 		int valor = 0;
@@ -98,6 +118,11 @@ public class Carta {
 		}
 		return valor;
 	}
+	
+	/**
+	 * Te dice el valor que tiene el numero de la carta en el juego del Mus
+	 * @return Valor de la carta
+	 */
 
 	public int getValorMus() {
 		int valor = 0;
@@ -116,6 +141,11 @@ public class Carta {
 		}
 		return valor;
 	}
+	
+	/**
+	 * Te dice el valor que tiene el numero de la carta en el juego 7 y media
+	 * @return Valor de la carta 
+	 */
 
 	public double getValor7ymedia() {
 		double valor = 0;
@@ -137,6 +167,11 @@ public class Carta {
 			valor = 0.5;
 		}
 		return valor;
+	}
+
+	@Override
+	public String toString() {
+		return getNombreCarta();
 	}
 
 }
