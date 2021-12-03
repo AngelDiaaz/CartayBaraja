@@ -40,6 +40,7 @@ public class MainApp {
 					} else {
 						//throw new Exception("\nTe has pasado de 7 y medio.\nHas perdido!!!");
 						System.out.println("\nTe has pasado de 7 y medio.\nHas perdido!!!");
+						break;
 					}
 				} while (cont.equalsIgnoreCase("si"));
 				System.out.println("¿Quieres volver a jugar?");
