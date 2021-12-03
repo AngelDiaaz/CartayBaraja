@@ -28,11 +28,15 @@ public class MainApp {
 					carta = baraja.Robar();
 					System.out.println("Carta: " + carta);
 					valor += carta.getValor7ymedia();
-					System.out.println("Puntucacion: " + valor);
+					System.out.println("Puntuacion: " + valor);
 
 					if (valor <= 7.5) {
 						System.out.println("¿Quieres otra carta?");
 						cont = s.nextLine();
+						if(cont.equalsIgnoreCase("no")) {
+							System.out.println("Fin del juego\nPuntuacion total: " + valor);
+						}
+						
 					} else {
 						//throw new Exception("\nTe has pasado de 7 y medio.\nHas perdido!!!");
 						System.out.println("\nTe has pasado de 7 y medio.\nHas perdido!!!");
